@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Conversor.Views.Converting"
+             NavigationPage.HasNavigationBar="False"
+             Visual="Material">
+    <Grid BackgroundColor="#581845">
+        <StackLayout VerticalOptions="Center"
+                     Margin="20">
+            <Image Source="earth.png" 
+                   Margin="30"/>
+            <Frame HasShadow="False"
+                   CornerRadius="15">
+                <Entry Keyboard="Numeric" 
+                       Placeholder="Dólares $"
+                       FontSize="Large"
+                       x:Name="txtDs"/>
+            </Frame>
+            <Button Text="Calcular"
+                    CornerRadius="10"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    Margin="0,20,0,0"
+                    TextTransform="None"
+                    BackgroundColor="#FF5733"
+                    TextColor="White"
+                    x:Name="btnCalculate"
+                    Clicked="btnCalculate_Clicked"/>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Resultado: "
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       TextColor="White"/>
+                <Label Text=""
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center"
+                       TextColor="White"
+                       x:Name="lblResult"/>
+            </StackLayout>
+            <Button Text="Volver"
+                    TextTransform="None"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    CornerRadius="10"
+                    x:Name="btnBack"
+                    Clicked="btnBack_Clicked"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
