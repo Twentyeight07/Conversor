@@ -14,6 +14,8 @@ namespace Conversor.Views
     {
         public MainMenu()
         {
+            DisplayAlert("Información", "Para utilizar esta aplicación se debe tener conexión a internet", "Ok");
+
             InitializeComponent();
         }
 

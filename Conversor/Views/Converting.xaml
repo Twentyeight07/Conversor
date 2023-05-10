@@ -4,51 +4,96 @@
              x:Class="Conversor.Views.Converting"
              NavigationPage.HasNavigationBar="False"
              Visual="Material">
-    <Grid BackgroundColor="#581845">
+    <Grid BackgroundColor="#165B18">
         <StackLayout VerticalOptions="Center"
-                     Margin="20">
-            <Image Source="earth.png" 
-                   Margin="30"/>
-            <Frame HasShadow="False"
-                   CornerRadius="15">
-                <Entry Keyboard="Numeric" 
-                       Placeholder="Dólares $"
-                       FontSize="Large"
-                       x:Name="txtDs"/>
-            </Frame>
+                     Margin="30">
+            <Grid Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0"
+                       Source="dollar.png"
+                       x:Name="imgFrom" />
+                <Image Grid.Column="1"
+                       Source="rightArrow.png" />
+                <Image Grid.Column="2"
+                       Source="bolivar.png"
+                       x:Name="imgTo" />
+            </Grid>
+            <Grid Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="120"/>
+                </Grid.RowDefinitions>
+                <Label Grid.ColumnSpan="2"
+                       Grid.Row="0"
+                       Text="Importante: Introduzca números sin puntos y utilice la coma solo para indicar decimales"
+                       FontSize="13" 
+                       TextColor="White"/>
+                <Frame Grid.Column="0"
+                       Grid.Row="1"
+                       BackgroundColor="Black"
+                       HasShadow="False"
+                       CornerRadius="15"
+                       VerticalOptions="Center">
+                    <Entry Keyboard="Numeric"
+                           BackgroundColor="Black"
+                           TextColor="White"
+                           PlaceholderColor="White"
+                           Placeholder="Dólares / $"
+                           FontSize="Large"
+                           x:Name="txtDs"/>
+                </Frame>
+               <ImageButton Grid.Column="1"
+                            Grid.Row="1"
+                            Margin="10"
+                            Source="exchangeRate.png"
+                            CornerRadius="20"
+                            VerticalOptions="Center"
+                            Aspect="AspectFit"
+                            BackgroundColor="Transparent"
+                            x:Name="btnChangeCurrency"
+                            Clicked="btnChangeCurrency_Clicked"/>
+            </Grid>
             <Button Text="Calcular"
                     CornerRadius="10"
                     FontSize="Large"
                     FontAttributes="Bold"
-                    Margin="0,20,0,0"
+                    Margin="0,0,0,20"
                     TextTransform="None"
-                    BackgroundColor="#FF5733"
+                    BackgroundColor="#1EC11E"
                     TextColor="White"
                     x:Name="btnCalculate"
-                    Clicked="btnCalculate_Clicked"/>
-            <StackLayout Orientation="Horizontal" >
+                    Clicked="btnCalculate_Clicked" />
+            <StackLayout Orientation="Horizontal">
                 <Label Text="Resultado: "
                        FontSize="Large"
                        FontAttributes="Bold"
                        VerticalOptions="Center"
-                       TextColor="White"/>
+                       TextColor="White" />
                 <Label Text=""
                        FontSize="Large"
                        FontAttributes="Bold"
                        VerticalOptions="Center"
                        TextColor="White"
-                       x:Name="lblResult"/>
+                       x:Name="lblResult" />
             </StackLayout>
             <Button Text="Volver"
                     TextTransform="None"
-                    BackgroundColor="White"
-                    TextColor="Black"
+                    BackgroundColor="#FF5733"
+                    TextColor="White"
                     FontSize="Large"
                     FontAttributes="Bold"
                     HorizontalOptions="Center"
                     CornerRadius="10"
                     x:Name="btnBack"
-                    Clicked="btnBack_Clicked"/>
+                    Clicked="btnBack_Clicked" />
         </StackLayout>
     </Grid>
 </ContentPage>

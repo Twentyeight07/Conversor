@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Conversor.Views.MainMenu"
              NavigationPage.HasNavigationBar="False">
-    <StackLayout BackgroundColor="#581845">
+    <StackLayout BackgroundColor="#165B18">
         <Label Text="Conversor"
                FontSize="40"
                FontAttributes="Bold"
@@ -16,8 +16,8 @@
                HasShadow="False">
             <StackLayout VerticalOptions="Center"
                          Spacing="20">
-                <Image Source="ruler.png" />
-                <Label Text="(cm) a (m)"
+                <Image Source="exchangeRate.png" />
+                <Label Text="($) a (Bs)"
                        FontAttributes="Bold"
                        FontSize="40"
                        HorizontalOptions="Center" />
