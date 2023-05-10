@@ -4,6 +4,7 @@ using Xamarin.Forms.Xaml;
 using Conversor.Views;
 using Conversor.Services;
 using Conversor.Global;
+using System.Globalization;
 
 namespace Conversor
 {
@@ -26,7 +27,7 @@ namespace Conversor
                 var webScrapper = new WebScraper();
                 string res = await webScrapper.ScrapeWebsite("https://www.bcv.org.ve");
 
-                ExchangeRate.Rate = Convert.ToDouble(res);
+                ExchangeRate.Rate = Convert.ToDouble(res, new CultureInfo("es-VE"));
 
             }
             catch (Exception ex)

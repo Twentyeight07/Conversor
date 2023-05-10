@@ -28,14 +28,15 @@ namespace Conversor.Views
 		{
 			dolar = Convert.ToDouble(txtDs.Text);
 			res = dolar * bs;
-			lblResult.Text = "Bs./ " + res.ToString("N", new CultureInfo("es-Ve"));
+			lblResult.Text = "Bs./ " + res.ToString("N2", new CultureInfo("es-VE"));
+			DisplayAlert("Tasa",ExchangeRate.Rate.ToString(),"Ok");
 		}
 
         private void CalculateDs()
         {
             dolar = Convert.ToDouble(txtDs.Text);
             res = dolar / bs;
-            lblResult.Text = "$./ " + res.ToString("N", new CultureInfo("es-Us"));
+            lblResult.Text = "$./ " + res.ToString("N2", new CultureInfo("en-US"));
         }
 
         private void Validate()
